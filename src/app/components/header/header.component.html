@@ -1,0 +1,74 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav  #rightsidenav [mode]="mode.value">
+        <mat-toolbar class="mat-toolbar-bg-color">
+            <mat-toolbar-row>
+                <span><mat-icon (click)="rightsidenav.toggle()">close</mat-icon></span>
+                <span>
+                    <a data-ui-sref="dashboard" class="logo pull-left">
+                        <img src="/assets/images/dayanand3.jpg" alt="CF Logo" />
+                    </a>
+                </span> 
+            </mat-toolbar-row> 
+        </mat-toolbar> 
+        <!-- <mat-sidenav-content> -->
+        <div class="link-description" routerLink="/lead-create" routerLinkActive="active" (click)="rightsidenav.toggle()">
+          Dashboard
+         </div>
+         <div class="link-description" routerLink="/submitted-apps" routerLinkActive="active" (click)="rightsidenav.toggle()">
+         <!-- (click)="goPlaces('/app-submitted');rightsidenav.toggle()" -->
+          Satyarth Prakash 
+        </div>
+        <!-- </mat-sidenav-content> -->
+    </mat-sidenav>
+
+    <mat-sidenav-content class="container-backgound-color">  
+          <mat-toolbar class="mat-toolbar-bg-color fixed-top">
+              <mat-toolbar-row>
+                <span><mat-icon (click)="rightsidenav.toggle()">menu</mat-icon></span>
+                <span>
+                    <a data-ui-sref="dashboard" class="logo pull-left">
+                        <img src="/assets/images/dayanand4.jpg" alt="CF Logo" />
+                    </a>
+                </span>
+                <span class="ng-header-text"><p><a href="https://www.facebook.com/arya.samaj/">
+					    !! ओ३म् भूर्भुव: स्व: तत्सवितुर्वरेण्यं भर्गो देवस्य धीमहि धियो यो न: प्रचोदयात् !!
+					  </a></p>
+				</span>
+                <!-- <div class="page page-laser-to-text">
+					<input id="input-animation" type="text" maxlength="24" placeholder="I love you!">
+					<canvas id="canvas-animation"></canvas>
+				</div> -->
+
+                <span class="fill-space"></span> 
+                <mat-icon>apps</mat-icon>
+               
+                <button mat-icon-button [matMenuTriggerFor]="logoutmenu">
+                    <mat-icon>account_circle</mat-icon>
+                </button>  <!--  (click)="logoutFn()" -->
+              </mat-toolbar-row>
+            </mat-toolbar> 
+            <div layout="row" layout-align="center"> 
+                <router-outlet></router-outlet>
+                 <footer>
+					<div class="footer">
+						@Powered by Anil Arya(CSE - NIT Allahabad) 2018<br>
+						@Technology stacks : Angular6 and webpack
+					</div>
+				</footer>
+            </div>
+      </mat-sidenav-content>
+</mat-sidenav-container> 
+
+ 
+<mat-menu #logoutmenu="matMenu" >
+    <span mat-menu-item [disableRipple]="true" (click)="$event.stopPropagation()">
+      <!-- popover content begin -->
+      <div class="popover-content">
+        <div class="flname">[[ Global?.LoginDetails['firstName'] ]] [[Global?.LoginDetails['lastName'] ]]</div>
+        <div class="loginEmail">[[ Global?.LoginDetails['loginEmail'] ]] </div>
+        <button mat-raised-button  color="accent" (click)="logoutFn()">Logout</button>
+      </div>
+    <!-- popover content end  -->
+    </span>
+</mat-menu> 
+
