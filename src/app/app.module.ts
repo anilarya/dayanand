@@ -33,7 +33,6 @@ const appRoutes: Routes = [
     path     : 'dashboard',   
     component: DashboardComponent, 
     // resolve  : { initData: DataResolverService }
-
   }];
 
 firebase.initializeApp(environment.firebase);
@@ -51,7 +50,7 @@ firebase.initializeApp(environment.firebase);
     BrowserAnimationsModule,FlexLayoutModule,
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features 
-    RouterModule.forRoot(appRoutes, {onSameUrlNavigation: 'reload', useHash: false}),
+    RouterModule.forRoot(appRoutes, {onSameUrlNavigation: 'reload', useHash: true}),
   ],
   providers: [ ],
   bootstrap: [AppComponent]
