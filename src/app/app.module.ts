@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, Http, URLSearchParams, Headers, RequestOptions } from '@angular/http';
 import { Routes, RouterModule } from "@angular/router";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout'; 
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -11,10 +12,17 @@ import { LoginComponent } from './components/login/login.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MaterialModule} from './shared/modules/matModule'; 
 
+import { AngularFireModule,FirebaseOptionsToken  } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { environment } from '../environments/environment';
+import * as firebase from 'firebase';
+
 const appRoutes: Routes = [
   {
     path       : '',  // Default page is submitted apps
-    redirectTo : "/dashboard",
+    redirectTo : "/login",
     pathMatch  : 'full'
   },
   {
@@ -28,6 +36,7 @@ const appRoutes: Routes = [
 
   }];
 
+firebase.initializeApp(environment.firebase);
 
 @NgModule({
   declarations: [
@@ -37,11 +46,17 @@ const appRoutes: Routes = [
     HeaderComponent
   ],
   imports: [
-    BrowserModule, RouterModule, FormsModule, ReactiveFormsModule, MaterialModule,
-    BrowserAnimationsModule,
+    BrowserModule, AngularFireModule.initializeApp(environment.firebase),
+    RouterModule, FormsModule, ReactiveFormsModule, MaterialModule,
+    BrowserAnimationsModule,FlexLayoutModule,
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features 
     RouterModule.forRoot(appRoutes, {onSameUrlNavigation: 'reload', useHash: false}),
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+// https://webdesign.tutsplus.com/articles/15-inspiring-examples-of-css-animation-on-codepen--cms-23937

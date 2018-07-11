@@ -24,16 +24,16 @@
     <mat-sidenav-content class="container-backgound-color">  
           <mat-toolbar class="mat-toolbar-bg-color fixed-top">
               <mat-toolbar-row>
-                <span><mat-icon (click)="rightsidenav.toggle()">menu</mat-icon></span>
+                <span *ngIf="userDetails"><mat-icon (click)="rightsidenav.toggle()">menu</mat-icon></span>
                 <span>
                     <a data-ui-sref="dashboard" class="logo pull-left">
                         <img src="/assets/images/dayanand4.jpg" alt="CF Logo" />
                     </a>
                 </span>
                 <span class="ng-header-text"><p><a href="https://www.facebook.com/arya.samaj/">
-					    !! ओ३म् भूर्भुव: स्व: तत्सवितुर्वरेण्यं भर्गो देवस्य धीमहि धियो यो न: प्रचोदयात् !!
-					  </a></p>
-				</span>
+      					    !! ओ३म् भूर्भुव: स्व: तत्सवितुर्वरेण्यं भर्गो देवस्य धीमहि धियो यो न: प्रचोदयात् !!
+      					  </a></p>
+      				  </span>
                 <!-- <div class="page page-laser-to-text">
 					<input id="input-animation" type="text" maxlength="24" placeholder="I love you!">
 					<canvas id="canvas-animation"></canvas>
@@ -42,19 +42,19 @@
                 <span class="fill-space"></span> 
                 <mat-icon>apps</mat-icon>
                
-                <button mat-icon-button [matMenuTriggerFor]="logoutmenu">
+                <button mat-icon-button [matMenuTriggerFor]="logoutmenu" *ngIf="userDetails">
                     <mat-icon>account_circle</mat-icon>
                 </button>  <!--  (click)="logoutFn()" -->
               </mat-toolbar-row>
             </mat-toolbar> 
             <div layout="row" layout-align="center"> 
                 <router-outlet></router-outlet>
-                 <footer>
+                 <!-- <footer>
 					<div class="footer">
 						@Powered by Anil Arya(CSE - NIT Allahabad) 2018<br>
 						@Technology stacks : Angular6 and webpack
 					</div>
-				</footer>
+				</footer> -->
             </div>
       </mat-sidenav-content>
 </mat-sidenav-container> 
@@ -64,8 +64,16 @@
     <span mat-menu-item [disableRipple]="true" (click)="$event.stopPropagation()">
       <!-- popover content begin -->
       <div class="popover-content">
-        <div class="flname">[[ Global?.LoginDetails['firstName'] ]] [[Global?.LoginDetails['lastName'] ]]</div>
-        <div class="loginEmail">[[ Global?.LoginDetails['loginEmail'] ]] </div>
+         <div class="container" fxLayout="row" fxLayout.xs="column"  fxLayoutAlign="start stretch">
+            <div fxFlex="75%"> 
+                <div class="flname">{{ userDetails?.displayName }}</div>
+                <div class="loginEmail">{{ userDetails?.email }} </div>
+            </div>
+            <div fxFlex="25%"> 
+                <img id="re-nav-dashboard-img" [src]="userDetails?.photoURL ? userDetails?.photoURL: '/assets/images/dayanand3.jpg'" />
+            </div>
+        </div>
+        
         <button mat-raised-button  color="accent" (click)="logoutFn()">Logout</button>
       </div>
     <!-- popover content end  -->

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -10,10 +11,21 @@ export class HeaderComponent implements OnInit {
   mode = new FormControl('over');
   formControl = '';
   shouldRun = true; 
+  userDetails :any;
 
-  constructor() { }
+	constructor(private authService :  AuthService) {
+	  	
+	}
 
-  ngOnInit() {
-  }
+  	logoutFn(){
+  		this.authService.logout();
+  	}
+
+  	ngOnInit() {
+  		this.authService.user.subscribe(_res=>{
+    		console.error("login page", _res);
+    		this.userDetails = _res;
+    	});
+  	}
 
 }

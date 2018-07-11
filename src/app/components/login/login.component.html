@@ -1,9 +1,10 @@
+ 
  <div>
  <img src="/assets/images/dayanand1.jpg" class="background-image-width" alt="Arya" />
 </div>
 
 <!--The content below is only a placeholder and can be replaced.-->
-<form #loginForm="ngForm" (ngSubmit)="login()">
+<form #loginForm="ngForm">
   <div class="svgContainer">
     <div>
       <svg class="mySVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200">
@@ -127,14 +128,32 @@
   <div class="inputGroup inputGroup1">
     <label for="email1">Email</label>
     <input type="text" id="email" name="email" [(ngModel)]="email" class="email" maxlength="256" required/>
-    <p class="helper helper1">email@domain.com</p>
+    <p class="helper helper1"> </p>
     <span class="indicator"></span>
   </div>
   <div class="inputGroup inputGroup2">
     <label for="password">Password</label>
     <input type="password" id="password" name="password" [(ngModel)]="password" class="password" required/>
   </div>
-  <div class="inputGroup inputGroup3">
-    <button id="login" type="submit" [disabled]="loginForm.invalid">Log in</button>
+  <div class="inputGroup inputGroup3"> 
+        <div class="container" fxLayout="row" fxLayout.xs="column"  fxLayoutAlign="start stretch"> 
+            <div fxFlex="50%"> 
+                <button mat-raised-button   (click)="login()" [disabled]="loginForm.invalid" color="primary">LOGIN <mat-icon>touch_app</mat-icon></button> 
+            </div><mat-divider [vertical]="true"></mat-divider><mat-divider [vertical]="true"></mat-divider>
+            <div fxFlex="50%"> 
+                 <button mat-raised-button  (click)="signup()" [disabled]="loginForm.invalid" color="primary">SIGNUP <mat-icon>accessibility</mat-icon></button>
+            </div>
+        </div> 
+        <br>
+        <div class="container" fxLayout="row" fxLayout.xs="column"  fxLayoutAlign="start stretch"> 
+            <div fxFlex="100%"> 
+                <button mat-raised-button   (click)="facebookLogin()" color="accent">LOGIN WITH FACEBOOK<mat-icon>touch_app</mat-icon></button> 
+            </div> 
+        </div><br>
+        <div class="container" fxLayout="row" fxLayout.xs="column"  fxLayoutAlign="start stretch">
+            <div fxFlex="100%"> 
+                 <button mat-raised-button  (click)="googleLogin()"  color="warn">LOGIN WITH GOOGLE<mat-icon>touch_app</mat-icon></button>
+            </div>
+        </div>
   </div>
 </form>

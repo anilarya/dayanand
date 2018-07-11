@@ -54,17 +54,21 @@ $mat-icon-color : white;
 
 
 .popover-content {
-    height: 100px;
-    width: 200px; 
+    height: 134px;
+    width: 216px; 
     .flname{
-      font-size: medium;
+      font-size: larger;
       padding: -10px;
       margin-bottom: -24px;
     }
     .loginEmail{
-      font-size: x-small;
+      font-size: smaller;
       padding: -10px;
       margin-bottom: -18px;
+    }
+
+    img{
+      width : 100%;
     }
 }
 
