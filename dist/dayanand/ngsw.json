@@ -1,0 +1,113 @@
+{
+  "configVersion": 1,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main.09549b02ea071209f073.js",
+        "/polyfills.6327d5aecec16a845ede.js",
+        "/runtime.a66f828dca56eeb90e02.js",
+        "/styles.2324a878372ab0cfc9b7.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/images/arya.gif",
+        "/assets/images/dayanand1.jpg",
+        "/assets/images/dayanand2.gif",
+        "/assets/images/dayanand3.jpg",
+        "/assets/images/dayanand4.jpg",
+        "/assets/images/dayanand5.jpg",
+        "/assets/images/fb1.svg",
+        "/assets/images/fb2.svg",
+        "/assets/images/g1.svg",
+        "/assets/images/g2.svg",
+        "/assets/images/google.svg",
+        "/assets/images/havan.gif",
+        "/assets/images/history.jpg",
+        "/assets/images/legends1.jpg",
+        "/assets/images/legends2.jpg",
+        "/assets/images/legends3.jpg",
+        "/assets/images/om1.PNG",
+        "/assets/images/random.jpg",
+        "/assets/images/sacredVed.jpg",
+        "/assets/images/satyarthPrakash.png",
+        "/assets/js/login-animation.js"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/images/arya.gif": "43a7b06da405ce72ddef70418771dd95e772e594",
+    "/assets/images/dayanand1.jpg": "1c2a57ee988c94d86886417651539bb56e6539c7",
+    "/assets/images/dayanand2.gif": "14199470f780e2ff00f44c2b96daad13740c04ab",
+    "/assets/images/dayanand3.jpg": "39bf1a49f9aae03ba39d804703e1e06bc9a2660d",
+    "/assets/images/dayanand4.jpg": "00549faeb0baa56b4e635fe4d0a292dc21c4a56e",
+    "/assets/images/dayanand5.jpg": "ffaf69c085de1cc252a158a0f0574b863038af7e",
+    "/assets/images/fb1.svg": "9acd0ce4451a719ac43dd8a0730e0f7e6c00c11e",
+    "/assets/images/fb2.svg": "d2eda8dd86c17dcbcdd17612b2b6d806520e62c8",
+    "/assets/images/g1.svg": "1d2281d013aafd2f3f02b458bf6cb1b896501b4b",
+    "/assets/images/g2.svg": "23392a28534c32c129b2e0ffaf8111d674393fda",
+    "/assets/images/google.svg": "d87509a7efcdb386dd53f5712fb96c7bea9bf6ef",
+    "/assets/images/havan.gif": "ca526e73321765ef69477029a003d6ad265eba50",
+    "/assets/images/history.jpg": "a6251cc58f526978fa1c276dce5ef2b7903ed496",
+    "/assets/images/legends1.jpg": "fa17b9f96fe184cd08af48222d9a3cb94776779a",
+    "/assets/images/legends2.jpg": "c5555db19b03a5e1926a50acde580d3282df0483",
+    "/assets/images/legends3.jpg": "0e3645e490ef904229ac33c187692a4da1c10ee3",
+    "/assets/images/om1.PNG": "060b7366bebce0089a5f6925afeb42f2cb44aaea",
+    "/assets/images/random.jpg": "39abecaa79e5e311c669b5b978b3502972f0b2ea",
+    "/assets/images/sacredVed.jpg": "b56ca076ef789c8d67d98fce8e558d7d35411a9c",
+    "/assets/images/satyarthPrakash.png": "7050f2607e990da7e800d259b92f2540eb9cfb72",
+    "/assets/js/login-animation.js": "f91f5abfd9092ac0048d40308ada590303351b44",
+    "/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "/index.html": "f523c2431cac4662adf68ad19dbefe28900638d4",
+    "/main.09549b02ea071209f073.js": "a06b4ed4d6370ea4a19d65e1df14dddee4ca28a1",
+    "/polyfills.6327d5aecec16a845ede.js": "39ba48d511845865ae72ab900f0a6bc23ff51bc0",
+    "/runtime.a66f828dca56eeb90e02.js": "078e320cc6fdaf355836c3b1c52b059cdd33fc7e",
+    "/styles.2324a878372ab0cfc9b7.css": "3986b54d1d282b248bc6879eb831c1f555a6718c"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^\\/]*\\.[^\\/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^\\/]*__[^\\/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^\\/]*__[^\\/]*\\/.*$"
+    }
+  ]
+}

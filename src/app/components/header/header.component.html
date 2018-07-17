@@ -11,12 +11,12 @@
             </mat-toolbar-row> 
         </mat-toolbar> 
         <!-- <mat-sidenav-content> -->
-        <div class="link-description" routerLink="/lead-create" routerLinkActive="active" (click)="rightsidenav.toggle()">
+        <div class="link-description" routerLink="/dashboard" routerLinkActive="active" (click)="rightsidenav.toggle()">
           Dashboard
          </div>
          <div class="link-description" routerLink="/submitted-apps" routerLinkActive="active" (click)="rightsidenav.toggle()">
          <!-- (click)="goPlaces('/app-submitted');rightsidenav.toggle()" -->
-          Satyarth Prakash 
+          User management
         </div>
         <!-- </mat-sidenav-content> -->
     </mat-sidenav>
@@ -41,7 +41,8 @@
 
                 <span class="fill-space"></span> 
                 <mat-icon>apps</mat-icon>
-               
+                <mat-icon color="accent" matBadge="22" matBadgePosition="above after">home</mat-icon>&nbsp;&nbsp;
+               <font size="4">{{ userDetails?.displayName }}</font>
                 <button mat-icon-button [matMenuTriggerFor]="logoutmenu" *ngIf="userDetails">
                     <mat-icon>account_circle</mat-icon>
                 </button>  <!--  (click)="logoutFn()" -->
@@ -70,7 +71,7 @@
                 <div class="loginEmail">{{ userDetails?.email }} </div>
             </div>
             <div fxFlex="25%"> 
-                <img id="re-nav-dashboard-img" [src]="userDetails?.photoURL ? userDetails?.photoURL: '/assets/images/dayanand3.jpg'" />
+                <img id="re-nav-dashboard-img" [src]="userDetails?.photoURL ? userDetails?.photoURL: '/assets/images/dayanand3.jpg'" class="deactivate-mobile-view" />
             </div>
         </div>
         

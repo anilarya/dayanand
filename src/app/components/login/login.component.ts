@@ -25,7 +25,7 @@ export class LoginComponent  {
     	private firebaseAuth: AngularFireAuth, private userService:  UserService) { 
     	
     	authService.user.subscribe(_res=>{
-    		console.error("login page", _res);
+    		// console.error("login page", _res);
     		this.userDetails = _res;
     	});
 

@@ -35,6 +35,7 @@ import {
   MatTabsModule,
   MatToolbarModule,
   MatTooltipModule,
+  MatBadgeModule
 } from '@angular/material';
 
 
@@ -74,7 +75,7 @@ import {
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-
+    MatBadgeModule
   ]
 })
 export class MaterialModule { }

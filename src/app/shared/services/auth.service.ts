@@ -14,7 +14,6 @@ export class AuthService {
     constructor(private firebaseAuth: AngularFireAuth, private router : Router,
     	private afs: AngularFirestore) { 
     	this.user = firebaseAuth.authState; 
-    	console.error(this.user);
     }
 
   	doRegisterWithEmailAndPassword(_value){

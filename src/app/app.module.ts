@@ -17,7 +17,10 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
-import * as firebase from 'firebase';
+import { CreationComponent } from './components/creation/creation.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { ResolveService } from './shared/services/resolve.service';
+import { TrimPipe } from './shared/pipes/trim.pipe';
 
 const appRoutes: Routes = [
   {
@@ -32,17 +35,23 @@ const appRoutes: Routes = [
   {
     path     : 'dashboard',   
     component: DashboardComponent, 
+    resolve  : { initData: ResolveService }
+  }, 
+  {
+    path     : 'creation',   
+    component: CreationComponent, 
     // resolve  : { initData: DataResolverService }
   }];
-
-firebase.initializeApp(environment.firebase);
+ 
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     LoginComponent,
-    HeaderComponent
+    HeaderComponent,
+    CreationComponent,
+    TrimPipe
   ],
   imports: [
     BrowserModule, AngularFireModule.initializeApp(environment.firebase),
@@ -50,7 +59,7 @@ firebase.initializeApp(environment.firebase);
     BrowserAnimationsModule,FlexLayoutModule,
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features 
-    RouterModule.forRoot(appRoutes, {onSameUrlNavigation: 'reload', useHash: true}),
+    RouterModule.forRoot(appRoutes, {onSameUrlNavigation: 'reload', useHash: true}), ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [ ],
   bootstrap: [AppComponent]

@@ -136,10 +136,10 @@
     <input type="password" id="password" name="password" [(ngModel)]="password" class="password" required/>
   </div>
   <div class="inputGroup inputGroup3"> 
-        <div class="container" fxLayout="row" fxLayout.xs="column"  fxLayoutAlign="start stretch"> 
+        <div class="container" fxLayout="row" fxLayout.xs="column"  fxLayoutAlign="start stretch" fxLayoutGap="10px"> 
             <div fxFlex="50%"> 
                 <button mat-raised-button   (click)="login()" [disabled]="loginForm.invalid" color="primary">LOGIN <mat-icon>touch_app</mat-icon></button> 
-            </div><mat-divider [vertical]="true"></mat-divider><mat-divider [vertical]="true"></mat-divider>
+            </div><mat-divider [vertical]="true"></mat-divider> 
             <div fxFlex="50%"> 
                  <button mat-raised-button  (click)="signup()" [disabled]="loginForm.invalid" color="primary">SIGNUP <mat-icon>accessibility</mat-icon></button>
             </div>
@@ -147,12 +147,18 @@
         <br>
         <div class="container" fxLayout="row" fxLayout.xs="column"  fxLayoutAlign="start stretch"> 
             <div fxFlex="100%"> 
-                <button mat-raised-button   (click)="facebookLogin()" color="accent">LOGIN WITH FACEBOOK<mat-icon>touch_app</mat-icon></button> 
+                <button mat-raised-button   (click)="facebookLogin()">
+                <img src="/assets/images/fb2.svg" alt="CF Logo" width="30"/>   
+                   LOGIN WITH FACEBOOK</button> 
             </div> 
         </div><br>
         <div class="container" fxLayout="row" fxLayout.xs="column"  fxLayoutAlign="start stretch">
             <div fxFlex="100%"> 
-                 <button mat-raised-button  (click)="googleLogin()"  color="warn">LOGIN WITH GOOGLE<mat-icon>touch_app</mat-icon></button>
+                 <button mat-raised-button  (click)="googleLogin()"><img src="/assets/images/g2.svg" alt="CF Logo"  width="30"/> 
+                   LOGIN WITH GOOGLE
+                   
+                 <!--  <mat-icon>touch_app</mat-icon> -->
+                </button>
             </div>
         </div>
   </div>
