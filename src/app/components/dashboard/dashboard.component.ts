@@ -8,7 +8,7 @@ import { UserService } from '../../shared/services/user.service';
 })
 export class DashboardComponent implements AfterViewInit {
 
-  	constructor(private userService : UserService) { }
+  	constructor(public userService : UserService) { }
 
   	ngAfterViewInit() {  
   		console.error(this.userService.categories);

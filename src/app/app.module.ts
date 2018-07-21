@@ -5,6 +5,7 @@ import { HttpModule, Http, URLSearchParams, Headers, RequestOptions } from '@ang
 import { Routes, RouterModule } from "@angular/router";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout'; 
+// import { ShareButtonsModule } from '@ngx-share/buttons';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -21,6 +22,7 @@ import { CreationComponent } from './components/creation/creation.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { ResolveService } from './shared/services/resolve.service';
 import { TrimPipe } from './shared/pipes/trim.pipe';
+import { CategoryComponent } from './components/category/category.component';
 
 const appRoutes: Routes = [
   {
@@ -33,15 +35,15 @@ const appRoutes: Routes = [
     component: LoginComponent,  
   }, 
   {
-    path     : 'dashboard',   
-    component: DashboardComponent, 
-    resolve  : { initData: ResolveService }
-  }, 
-  {
-    path     : 'creation',   
-    component: CreationComponent, 
-    // resolve  : { initData: DataResolverService }
-  }];
+    path     : 'dayanand',    
+    // resolve  : { initData: ResolveService },
+    children: [
+    	{ path: '', pathMatch: 'full', redirectTo: 'dashboard' },
+    	{ path: 'dashboard', component: DashboardComponent },
+    	{ path: 'category/:id', component: CategoryComponent}
+    ] 
+  },  
+];
  
 
 @NgModule({
@@ -51,7 +53,8 @@ const appRoutes: Routes = [
     LoginComponent,
     HeaderComponent,
     CreationComponent,
-    TrimPipe
+    TrimPipe,
+    CategoryComponent
   ],
   imports: [
     BrowserModule, AngularFireModule.initializeApp(environment.firebase),
@@ -59,7 +62,9 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,FlexLayoutModule,
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features 
-    RouterModule.forRoot(appRoutes, {onSameUrlNavigation: 'reload', useHash: true}), ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+    RouterModule.forRoot(appRoutes, {onSameUrlNavigation: 'reload', useHash: true}),
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+    // ShareButtonsModule.forRoot()
   ],
   providers: [ ],
   bootstrap: [AppComponent]

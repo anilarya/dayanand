@@ -11,7 +11,7 @@
             </mat-toolbar-row> 
         </mat-toolbar> 
         <!-- <mat-sidenav-content> -->
-        <div class="link-description" routerLink="/dashboard" routerLinkActive="active" (click)="rightsidenav.toggle()">
+        <div class="link-description" routerLink="dayanand/dashboard" routerLinkActive="active" (click)="rightsidenav.toggle()">
           Dashboard
          </div>
          <div class="link-description" routerLink="/submitted-apps" routerLinkActive="active" (click)="rightsidenav.toggle()">
@@ -26,7 +26,7 @@
               <mat-toolbar-row>
                 <span *ngIf="userDetails"><mat-icon (click)="rightsidenav.toggle()">menu</mat-icon></span>
                 <span>
-                    <a data-ui-sref="dashboard" class="logo pull-left">
+                    <a data-ui-sref="dayanand/dashboard" class="logo pull-left">
                         <img src="/assets/images/dayanand4.jpg" alt="CF Logo" />
                     </a>
                 </span>
@@ -48,8 +48,8 @@
                 </button>  <!--  (click)="logoutFn()" -->
               </mat-toolbar-row>
             </mat-toolbar> 
-            <div layout="row" layout-align="center"> 
-                <router-outlet></router-outlet>
+            <div layout="row" layout-align="center" [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''"> 
+                <router-outlet #o="outlet"></router-outlet>
                  <!-- <footer>
 					<div class="footer">
 						@Powered by Anil Arya(CSE - NIT Allahabad) 2018<br>

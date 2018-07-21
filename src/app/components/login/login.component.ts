@@ -31,6 +31,10 @@ export class LoginComponent  {
 
     	userService.getLoggedInUserDetails();
     }
+
+    private navigateToDashboard(){
+		this.router.navigate(['dayanand/dashboard']);
+	}
  
     login(){
     	let _data= {
@@ -40,17 +44,17 @@ export class LoginComponent  {
 	  	this.authService.doLoginWithEmailAndPassword(_data)
 	  		.then(res => {
 		    console.error("You are loggedIn", res, this.authService.user);
-		    this.router.navigate(['dashboard']);
+		    this.navigateToDashboard();
 		}, err => {
 		    console.log(err); 
 		})
-	}
+	} 
 
 	googleLogin(){
 		this.authService.doGoogleLogin()
 	  		.then(res => {
 		    console.error("You are loggedIn with google", res, this.authService.user);
-		    this.router.navigate(['dashboard']);
+		    this.navigateToDashboard();
 		}, err => {
 		    console.log(err); 
 		})
@@ -60,7 +64,7 @@ export class LoginComponent  {
 		this.authService.doFacebookLogin()
 	  		.then(res => {
 		    console.error("You are loggedIn with google", res, this.authService.user);
-		    this.router.navigate(['dashboard']);
+		    this.navigateToDashboard();
 		}, err => {
 		    console.log(err); 
 		})
